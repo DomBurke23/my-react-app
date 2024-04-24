@@ -1,23 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+// Can be removed as longer used as been replaced by Quiz.js 
+// Quiz.js is the main root component now 
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      Hello React
     </div>
   );
 }
