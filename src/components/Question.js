@@ -10,13 +10,13 @@ const Question = () => {
         <div className="question">{currentQuestion.question}</div>
         <div className="answers">
           {quizState.answers.map((answer, index) => (
-            <Answer 
+            <Answer
               answerText={answer}
               key={index}
               index={index}
               currentAnswer={quizState.currentAnswer}
               correctAnswer={currentQuestion.correctAnswer}
-              onSelectAnswer={(answerText) => dispatch({ type: "SELECT_ANSWER", payload: answerText })}
+              onSelectAnswer={(answerText) => dispatch({ type: "SELECT_ANSWER", payload: answerText }) }
             />
           ))}
         </div>

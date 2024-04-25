@@ -1,14 +1,14 @@
 import { createContext, useReducer } from "react";
-import questions from "../data";
-import { shuffleAnswers } from "../helpers";
+import { shuffleAnswers, normaliseQuestions } from "../helpers";
 
 const initialState = {
   currentQuestionIndex: 0,
-  questions,
+  questions: [],
   showResults: false,
-  answers: shuffleAnswers(questions[0]),
+  answers: [],
   currentAnswer: "",
-  correctAnswersCount:0
+  correctAnswersCount:0,
+  error:null
 };
 
 const reducer = (state, action) => {
@@ -34,6 +34,16 @@ const reducer = (state, action) => {
       };
     }
     case "RESTART":{ return initialState;}
+    case "LOADED_QUESTIONS":{
+      const normalisedQuestions = normaliseQuestions(action.payload);
+      return { 
+        ...state,
+        questions: normalisedQuestions,
+        answers:shuffleAnswers(normalisedQuestions[0])
+      };
+    }
+    case "SERVER_ERROR": { return { ...state, error:action.payload}; }
+    case "429_TOO_MANY_REQUESTS": { return { ...state, error:action.payload}; }
     default:{return state;}
   }
 };

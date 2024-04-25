@@ -5,6 +5,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 The main branch uses Mock Data from a css file. 
 The branch RealAPIData-NotMockData calls a API which gets the data for the quiz for us. 
 We got that api from https://opentdb.com/api_config.php 
+make sure you choose URL Encoding (RFC 3986).
+Problem is that api returns 429 too many requests so doesn't work as well 
 
 ## Available Scripts
 
