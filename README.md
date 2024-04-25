@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+The main branch uses Mock Data from a css file. 
+The branch RealAPIData-NotMockData calls a API which gets the data for the quiz for us. 
+We got that api from https://opentdb.com/api_config.php 
+
 ## Available Scripts
 
 In the project directory, you can run:
